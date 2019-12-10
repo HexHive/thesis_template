@@ -1,0 +1,147 @@
+\documentclass[a4paper,11pt,oneside]{report}
+
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[tracking=true,kerning=true,spacing=true]{microtype}
+\usepackage[DIV=14,BCOR=2mm,headinclude=true,footinclude=false]{typearea}
+\usepackage[
+  backend=biber,
+  style=numeric-comp,
+  hyperref=true,
+  %style=numeric,
+  %sorting=ydnt,
+  defernumbers=true,
+  maxbibnames=99,
+]{biblatex}
+\addbibresource{thesis.bib}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\sloppy
+\usepackage[french,german,english]{babel}
+\usepackage{utopia}
+\usepackage{setspace} % slightly larger spacing
+\setstretch{1.1}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\hypersetup{pdfborder={0 0 0}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black}
+\newlength{\drop}
+\newlength{\tpheight}\setlength{\tpheight}{0.9\textheight}
+\newlength{\txtheight}\setlength{\txtheight}{0.9\tpheight}
+
+\newcommand{\thesistitle}{A wonderful thesis\\about the merits of scientific writing}
+\newcommand{\thesisauthor}{The Student}
+\newcommand{\thesisadviser}{The Doctoral Student}
+\newcommand{\thesissupervisor}{Prof. Dr. sc. ETH Mathias Payer}
+\newcommand{\thesisexpert}{The External Reviewer}
+\newcommand{\thesistype}{Master of Science in Computer Science}
+% Bachelor of Science in Computer Science
+% 
+\author{}
+\begin{document}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Title page
+\begin{titlepage}
+\begingroup
+\drop=0.1\txtheight
+\vspace*{\drop}
+\centering 
+{\LARGE École polytechnique fédérale de Lausanne}\\[2\baselineskip]
+{\LARGE\sffamily \thesistitle{}}\\[2\baselineskip]
+by \thesisauthor\par
+\vfill
+{\LARGE Degree: \thesistype}\par
+\vspace{\drop}
+
+
+\flushleft
+{Approved by the Examining Committee:}\par
+\vspace{1.5\baselineskip}
+\thesissupervisor\\
+Thesis Advisor \\[1\baselineskip]
+\thesisexpert\\
+External Expert \\[1\baselineskip]
+\thesisadviser\\
+Thesis Supervisor\par
+\centering
+\vspace{1\baselineskip}
+EPFL IC IINFCOM HEXHIVE \\
+BC 160 (Bâtiment BC) \\
+Station 14 \\
+CH-1015 Lausanne \\[\baselineskip]
+\today
+\par
+\vfill
+\endgroup
+\end{titlepage}
+
+% Dedication and acknowledgements
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{3cm}
+
+\begin{raggedleft}
+    Follow the white rabbit...\\
+    --- The Matrix\\
+\end{raggedleft}
+\vspace{4cm}
+\begin{center}
+    Dedicated to my pet bunny.
+\end{center}
+\setcounter{page}{0}
+
+% Achnowledgements
+\cleardoublepage
+\chapter*{Acknowledgements}
+\markboth{Acknowledgements}{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+% put your text here
+\lipsum[1-2]
+
+\bigskip
+ 
+\noindent\textit{Lausanne, \today}
+\hfill \thesisauthor
+
+% Abstracts
+\cleardoublepage
+\chapter*{Abstract}
+\markboth{Abstract}{Abstract}
+\addcontentsline{toc}{chapter}{Abstract (English/Français)}
+% put your text here
+\lipsum[1-2]
+
+
+% French abstract for doctoral theses, optional for MSc/BSc
+\begin{otherlanguage}{french}
+\cleardoublepage
+\chapter*{Résumé}
+\markboth{Résumé}{Résumé}
+% put your text here
+\lipsum[1-2]
+\end{otherlanguage}
+
+
+\cleardoublepage
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents
+\setlength{\parskip}{1em}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Background}
+\chapter{Design}
+\chapter{Implementation}
+\chapter{Evaluation}
+\chapter{Conclusion}
+
+\nocite{*}
+\printbibliography
+
+\end{document}
