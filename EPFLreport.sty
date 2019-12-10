@@ -1,0 +1,203 @@
+\ProvidesPackage{EPFLreport}
+\usepackage[absolute]{textpos}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[tracking=true,kerning=true,spacing=true]{microtype}
+\usepackage[DIV=14,BCOR=2mm,headinclude=true,footinclude=false]{typearea}
+\usepackage[
+  backend=biber,
+  style=numeric-comp,
+  hyperref=true,
+  %style=numeric,
+  %sorting=ydnt,
+  defernumbers=true,
+  maxbibnames=99,
+]{biblatex}
+\addbibresource{thesis.bib}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\sloppy
+\usepackage[french,german,english]{babel}
+\usepackage{utopia}
+\usepackage{setspace} % slightly larger spacing
+\setstretch{1.1}
+\usepackage{hyperref}
+\hypersetup{pdfborder={0 0 0}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black}
+
+\newif\if@epflmscthesis
+\newif\if@epflbscthesis
+\newif\if@epflmscproject
+\newif\if@epflbscproject
+\DeclareOption{MScThesis}{\@epflmscthesistrue}
+\DeclareOption{BScThesis}{\@epflbscthesistrue}
+\DeclareOption{MScProject}{\@epflmscprojecttrue}
+\DeclareOption{BScProject}{\@epflbscprojecttrue}
+
+\ProcessOptions\relax
+
+\newcommand{\projectterm}{Project Report}
+\if@epflmscthesis
+  \renewcommand{\projectterm}{Master Thesis}
+\fi
+\if@epflbscthesis
+  \renewcommand{\projectterm}{Bachelor Thesis}
+\fi
+\if@epflmscproject
+  \renewcommand{\projectterm}{Master Project Report}
+\fi
+\if@epflbscproject
+  \renewcommand{\projectterm}{Bachelor Project Report}
+\fi
+
+\def\@adviser{Thesis Advisor}
+\newcommand{\adviser}[1]{
+  \def\@adviser{#1}
+}
+
+\def\@supervisor{Thesis Supervisor}
+\newcommand{\supervisor}[1]{
+  \def\@supervisor{#1}
+}
+
+\def\@expert{Expert Reviewer}
+\newcommand{\expert}[1]{
+  \def\@expert{#1}
+}
+
+\def\maketitle{\par
+ \begingroup
+   \renewcommand\thefootnote{\fnsymbol{footnote}}%
+   \def\@makefnmark{\hbox to\z@{$\m@th^{\@thefnmark}$\hss}}%
+    \long\def\@makefntext##1{\parindent 1em\noindent
+            \hbox to1.8em{\hss$\m@th^{\@thefnmark}$}##1}%
+   \if@twocolumn
+     \twocolumn[\@maketitle]%
+     \else \newpage
+     \global\@topnum\z@
+     \@maketitle \fi\@thanks
+ \endgroup
+ \setcounter{footnote}{0}%
+ \let\maketitle\relax
+ \let\@maketitle\relax
+ \let\thanks\relax}
+
+\def\@maketitle{
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\newlength{\drop}
+\newlength{\tpheight}\setlength{\tpheight}{0.9\textheight}
+\newlength{\txtheight}\setlength{\txtheight}{0.9\tpheight}
+\begingroup
+\thispagestyle{empty}
+\drop=0.1\txtheight
+\begin{textblock*}{4in}[0.3066,0.39](1.5in,0.85in)
+    \includegraphics[width=3in]{EPFL}
+\end{textblock*}
+\begin{textblock*}{4in}[0.3066,0.39](5in,0.85in)
+    \includegraphics[width=4in]{HexHive}
+\end{textblock*}
+\vspace*{\drop}
+\centering 
+{\LARGE École polytechnique fédérale de Lausanne}\\[2\baselineskip]
+{\LARGE\sffamily \@title}\\[2\baselineskip]
+by \@author\par
+\vfill
+{\LARGE \projectterm}\par
+\vspace{\drop}
+
+\flushleft
+{Approved by the Examining Committee:}\par
+\vspace{1.5\baselineskip}
+\@adviser\\
+Thesis Advisor \\[1\baselineskip]
+\@expert\\
+External Expert \\[1\baselineskip]
+\@supervisor\\
+Thesis Supervisor\par
+\centering
+\vspace{1\baselineskip}
+EPFL IC IINFCOM HEXHIVE \\
+BC 160 (Bâtiment BC) \\
+Station 14 \\
+CH-1015 Lausanne \\[\baselineskip]
+\today
+\par
+\vfill
+\endgroup
+}
+
+\def\@dedication{%
+\begin{raggedleft}
+    Follow the white rabbit...\\
+    --- The Matrix\\
+\end{raggedleft}
+\vspace{4cm}
+\begin{center}
+    Dedicated to my pet bunny.
+\end{center}
+The dedication is usually a short inspirational quote.
+
+Define your dedication in \texttt{\textbackslash{}dedication\{...\}}
+and show them with \texttt{\textbackslash{}makededication}.
+}
+\newcommand{\dedication}[1]{
+  \def\@dedication{#1}
+}
+
+\def\makededication{\par
+% Dedication and acknowledgments
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{3cm}
+\@dedication
+\setcounter{page}{0}
+}
+
+\def\@acknowledgments{%
+This is where you thank those who supported you on this journey. Good examples
+are your significant other, family, advisers, and other parties that inspired
+you during this project. Generally this section is about 1/2 page to a page.
+
+Define your acknowledgments in \texttt{\textbackslash{}acknowledgments\{...\}}
+and show them with \texttt{\textbackslash{}makeacks}.
+}
+\newcommand{\acknowledgments}[1]{
+  \def\@acknowledgments{#1}
+}
+
+\def\makeacks{\par
+% Achnowledgments
+\cleardoublepage
+\chapter*{Acknowledgments}
+\markboth{Acknowledgments}{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+\@acknowledgments
+
+\bigskip
+ 
+\noindent\textit{Lausanne, \today}
+\hfill \@author
+}
+
+\def\abstract{\cleardoublepage
+\chapter*{Abstract}
+\markboth{Abstract}{Abstract}
+\addcontentsline{toc}{chapter}{Abstract (English/Français)}}
+\def\endabstract{}
+
+\def\frenchabstract{\begin{otherlanguage}{french}
+\cleardoublepage
+\chapter*{Résumé}
+\markboth{Résumé}{Résumé}}
+\def\endfrenchabstract{\end{otherlanguage}}
+
+\def\maketoc{
+\cleardoublepage
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents
+\setlength{\parskip}{1em}
+}
+
+\endinput
