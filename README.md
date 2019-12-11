@@ -1,4 +1,4 @@
-# HexHive EPFL thesis LaTeX template
+# EPFL thesis/project report LaTeX template
 
 Template for IC EPFL (BSc, MSc, or doctoral) theses and semester projects.
 The template contains a rough structure with some hints for systems-oriented
@@ -7,6 +7,13 @@ projects as well.
 
 Check out [the compiled example document](./sample.pdf) if you want to see how
 it is rendered.
+
+
+# Contact
+
+Contact [Mathias Payer](mailto:mathias.payer@epfl.ch) with bug reports or 
+questions.
+
 
 # Prerequisites
 
