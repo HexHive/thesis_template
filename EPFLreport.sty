@@ -1,3 +1,8 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EPFL report package
+% Goal: provide formatting for theses and project reports
+% Author: Mathias Payer <mathias.payer@epfl.ch>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ProvidesPackage{EPFLreport}
 \usepackage[absolute]{textpos}
 \usepackage{graphicx}
@@ -33,6 +38,9 @@
 \DeclareOption{BScThesis}{\@epflbscthesistrue}
 \DeclareOption{MScProject}{\@epflmscprojecttrue}
 \DeclareOption{BScProject}{\@epflbscprojecttrue}
+
+\newif\if@lablogo
+\DeclareOption{lablogo}{\@lablogotrue}
 
 \ProcessOptions\relax
 
@@ -92,11 +100,13 @@
 \thispagestyle{empty}
 \drop=0.1\txtheight
 \begin{textblock*}{4in}[0.3066,0.39](1.5in,0.85in)
-    \includegraphics[width=2.5in]{EPFL}
+    \includegraphics[width=2.5in]{EPFLlogo}
 \end{textblock*}
+\if@lablogo
 \begin{textblock*}{4in}[0.3066,0.39](5.7in,0.85in)
-    \includegraphics[width=3in]{HexHive}
+    \includegraphics[width=3in]{LABlogo}
 \end{textblock*}
+\fi
 \vspace*{\drop}
 \centering 
 {\LARGE École Polytechnique Fédérale de Lausanne}\\[2\baselineskip]
