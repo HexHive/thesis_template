@@ -9,6 +9,18 @@ Check out [the compiled example document](./sample.pdf) if you want to see how
 it is rendered.
 
 
+# License and acknowledgement
+
+The source code and LaTeX package is licensed under the LPPL. This work may be
+distributed and/or modified under the conditions of the LaTeX Project Public
+License, either version 1.3 of this license or (at your option) any later
+version. The latest version of this license is in
+http://www.latex-project.org/lppl.txt
+
+We would appreciate if you acknowledge the use of this template and where you
+got it from in your report.
+
+
 # Contact
 
 Contact [Mathias Payer](mailto:mathias.payer@epfl.ch) with bug reports or 
