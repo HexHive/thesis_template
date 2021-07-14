@@ -163,7 +163,7 @@ and show them with \texttt{\textbackslash{}makededication}.
 }
 
 \def\makededication{\par
-% Dedication and acknowledgments
+% Dedication and acknowledgements
 \cleardoublepage
 \thispagestyle{empty}
 \vspace*{3cm}
@@ -171,28 +171,28 @@ and show them with \texttt{\textbackslash{}makededication}.
 \setcounter{page}{0}
 }
 
-\def\@acknowledgments{%
+\def\@acknowledgements{%
 This is where you thank those who supported you on this journey. Good examples
 are your significant other, family, advisers, and other parties that inspired
 you during this project. Generally this section is about 1/2 page to a page.
 
 Consider acknowledging the use and location of this thesis package.
 
-Define your acknowledgments in \texttt{\textbackslash{}acknowledgments\{...\}}
+Define your acknowledgements in \texttt{\textbackslash{}acknowledgements\{...\}}
 and show them with \texttt{\textbackslash{}makeacks}.
 }
-\newcommand{\acknowledgments}[1]{
-  \def\@acknowledgments{#1}
+\newcommand{\acknowledgements}[1]{
+  \def\@acknowledgements{#1}
 }
 
 \def\makeacks{\par
 % Achnowledgments
 \cleardoublepage
-\chapter*{Acknowledgments}
-\markboth{Acknowledgments}{Acknowledgments}
-\addcontentsline{toc}{chapter}{Acknowledgments}
+\chapter*{Acknowledgements}
+\markboth{Acknowledgements}{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
 
-\@acknowledgments
+\@acknowledgements
 
 \bigskip
  
