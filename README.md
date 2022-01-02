@@ -99,7 +99,7 @@ Writing is hard. Here, have some help.
     \newcommand{\ali}[1]{\todo[inline,color=red!40]{alice: #1}} % inline comment block
    ```
 4. Use \emph while introducing keywords and for proper nouns, e.g.,
-   `\emph{Control-Flow Integrity} (CF)`
+   `\emph{Control-Flow Integrity} (CFI)`
 
 
 ## IV. Paper writing
