@@ -158,3 +158,25 @@ Note that these are hard rules that we will enforce in the group :)
 * The full text of the paper is in a single file for easier editing/searching
   (the repository will take care of merging)
 * Break lines at 80 characters
+
+# Presentation tips
+
+## General rules:
+ * Around one slide per minute of presentation.
+ * If presentation is shorter than 15 minutes, no need for a overview of the content.
+ * Always finish you presentation on the conclusion slide. You want your listener to read it again while you answer questions and not look at a blank "Q&A" slide.
+ * Add slides number for easier referencing when your listener ask questions.
+ * Aim for consistency in fonts, letter case, color among slides.
+ * Short word sequences, not necessarily full sentences
+
+## Figures:
+  * Make sure figures are readable (do not go under 10pt).
+  * Google Slides does not allow for SVG import, make sure your PNG are big enough to not look fuzzy on the projector. 
+  * Add labels and units to figures, graphs, axes.  
+
+## Giving the talk
+ * Specify if you want questions during or after the talk
+ * Watch the audience (pick 2-3 faces throughout the room and let your eyes wander during the talk)
+ * Modulate your voice, speak clearly and make breaks between sentences/slides
+ * Hold your hands still and don't constantly jump around, let the audience focus on the slides
+
