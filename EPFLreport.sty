@@ -16,7 +16,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[tracking=true,kerning=true,spacing=true]{microtype}
-\usepackage[DIV=14,BCOR=2mm,headinclude=true,footinclude=false]{typearea}
+\microtypecontext{spacing=nonfrench}
+\usepackage[DIV=12,BCOR=2mm,headinclude=true,footinclude=false]{typearea}
 \usepackage[
   backend=biber,
   style=numeric-comp,
@@ -31,7 +32,8 @@
 \setcounter{biburlucpenalty}{8000}
 \sloppy
 \usepackage[french,german,english]{babel}
-\usepackage{utopia}
+\usepackage{fourier}
+\def\fourierScale{s*[1.2]}
 \usepackage{setspace} % slightly larger spacing
 \setstretch{1.1}
 \usepackage{hyperref}
