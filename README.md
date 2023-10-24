@@ -89,10 +89,10 @@ Writing is hard. Here, have some help.
 2. Use a non-breaking space (`\~`) before, e.g., `\cite (foo\~\cite{bar})`, 
    `\autoref` as in `foo\~\autoref{fig:foo}`; don't use a breaking space ` `
    before a non-breaking space as this defeats the purpose of non-breaking
-   spaces. Do not use non-breaking spaces for free standing text such as
+   spaces. Do not use non-breaking spaces for free-standing text such as
    `XXX. \autoref{fig:foo} shows...`.
 3. For providing inline comments while iterating over the paper, 
-   you can use the `todonotes` LaTex package. This allows for turning off the
+   you can use the `todonotes` LaTeX package. This allows for turning off the
    comments using a simple disable flag. Sample provided below:
    ```latex
     \usepackage[disable]{todonotes} %disables all todonotes
@@ -106,7 +106,7 @@ Writing is hard. Here, have some help.
 
 1. Start with an outline of the paper
 2. For each section/subsection outline each paragraph and what you want to
-   say. Keep this information as comment above the paragraphs
+   say. Keep this information as comments above the paragraphs
 3. Continue to expand (write text for the individual paragraphs) and compact
    (condense the text to remove fluff), then expand again to figure out a
    better wording.
@@ -125,10 +125,10 @@ Writing is hard. Here, have some help.
 2. Memory overhead may be important too
 3. For figures: show the baseline, start x/y axis at 0, show label axes
 4. When presenting results in a table: (i) right align numbers, left align
-   text, (ii) use commas as delimeter for large numbers: 1,000,000; not
+   text, (ii) use commas as delimiter for large numbers: 1,000,000; not
    1000000, (iii) label your columns/rows, (iv) the caption should explain any
    abbreviations, (v) the table must be referenced in text, explaining the
-   main take-away but not just repeating results.
+   main takeaway but not just repeating results.
 
 
 ## VI. Discussing Related Work
@@ -163,9 +163,9 @@ Note that these are hard rules that we will enforce in the group :)
 
 ## General rules:
  * Around one slide per minute of presentation.
- * If presentation is shorter than 15 minutes, no need for a overview of the content.
- * Always finish you presentation on the conclusion slide. You want your listener to read it again while you answer questions and not look at a blank "Q&A" slide.
- * Add slides number for easier referencing when your listener ask questions.
+ * If the presentation is shorter than 15 minutes, no need for an overview of the content.
+ * Always finish your presentation on the conclusion slide. You want your listener to read it again while you answer questions and not look at a blank "Q&A" slide.
+ * Add slide numbers for easier referencing when your listeners ask questions.
  * Aim for consistency in fonts, letter case, color among slides.
  * Short word sequences, not necessarily full sentences
 
