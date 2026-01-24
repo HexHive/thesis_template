@@ -218,8 +218,10 @@ and show them with \texttt{\textbackslash{}makeacks}.
 \def\maketoc{
 \cleardoublepage
 \pdfbookmark{\contentsname}{toc}
-\tableofcontents
-\setlength{\parskip}{1em}
+\begingroup
+  \setlength{\parskip}{1em}
+  \tableofcontents
+\endgroup
 }
 
 \endinput
